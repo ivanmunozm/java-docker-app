@@ -5,7 +5,7 @@ pipeline {
         stage('Git Checkout') {
             steps {
                 script {
-                    git branch: 'main', url: 'https://github.com/ivanmunozm/java-docker-app.git'
+                    git branch: 'master', url: 'https://github.com/ivanmunozm/java-docker-app.git'
                 }
                 echo 'Checkout..'
             }

@@ -13,8 +13,11 @@ pipeline {
             }
         }
 
-        stage('Test') {
+        stage('Unit Test maven') {
             steps {
+                script {
+                     mvnTest()
+                }
                 echo 'Testing..'
             }
         }

@@ -1,12 +1,14 @@
+@Library('shared-library') _
 pipeline {
     agent any
 
     stages {
         stage('Git Checkout') {
             steps {
-                script {
-                    git branch: 'master', url: 'https://github.com/ivanmunozm/java-docker-app.git'
-                }
+                gitCheckout (
+                    branch: 'master',
+                    url: 'https://github.com/ivanmunozm/java-docker-app.git'
+                )
                 echo 'Checkout..'
             }
         }

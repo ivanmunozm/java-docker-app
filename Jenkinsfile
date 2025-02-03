@@ -9,7 +9,7 @@ pipeline {
     stages {
 
         stage('Git Checkout') {
-            
+
             when { expression { params.action == 'create' } }
 
             steps {
@@ -50,7 +50,8 @@ pipeline {
 
             steps {
                 script {
-                     statiCodeAnalysis() 
+                    def SonarQubecredentialsId = 'sonar-api'
+                     statiCodeAnalysis(SonarQubecredentialsId) 
                 }
             }
         }

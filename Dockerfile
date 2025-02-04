@@ -5,10 +5,10 @@ FROM openjdk:17-jdk-slim
 WORKDIR /app
 
 # Copiar el archivo JAR generado al contenedor
-COPY target/java-docker-app-1.0-SNAPSHOT.jar app.jar
+COPY target/*.jar app.jar
 
 # Exponer el puerto de la aplicación
 EXPOSE 9191
 
 # Comando para ejecutar la aplicación
-ENTRYPOINT ["java", "-jar", "app.jar"]
+CMD ["java", "-jar", "app.jar"]

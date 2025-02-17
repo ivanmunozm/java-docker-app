@@ -2,7 +2,7 @@
 pipeline {
     agent any
 
-    parameters parameters()
+    parameters()
 
     stages {
 

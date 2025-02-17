@@ -67,7 +67,7 @@ pipeline {
                 }
             }
         }
-        
+
         stage('Maven Build: maven') {
 
             when { expression { params.action == 'create' } }
@@ -85,7 +85,7 @@ pipeline {
 
             steps {
                 script {
-                     dockerbuild("${params.ImageName}", "${params.ImageTag}","params.AppName") 
+                     dockerbuild("${params.ImageName}", "${params.ImageTag}","params.DockerHubUser") 
                 }
             }
         }

@@ -77,9 +77,7 @@ pipeline {
             when { expression { params.action == 'create' } }
             steps {
                 script {
-                    withCredentials([string(credentialsId: 'DOCKERHUB_PASSWORD', variable: 'DOCKERHUB_PASSWORD')]) {
-                        dockerbuild("${params.ImageName}", "${params.ImageTag}", "${params.DockerHubUser}")
-                    }
+                    dockerbuild()
                 }
                 echo '✅ Docker Image built and pushed successfully'
             }

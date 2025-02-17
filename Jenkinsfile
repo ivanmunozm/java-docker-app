@@ -2,7 +2,15 @@
 pipeline {
     agent any
 
-    definePipelineParams()
+    // Obtener parámetros desde la librería
+    def paramsList = pipelineParams()
+
+    // Declarar los parámetros dentro del bloque parameters
+    parameters {
+        paramsList.each { param ->
+            param
+        }
+    }
 
     stages {
 
